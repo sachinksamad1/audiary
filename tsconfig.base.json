@@ -1,0 +1,10 @@
+// tsconfig.base.json
+{
+  "compilerOptions": {
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "@audiary/types": ["packages/types/src"]
+    }
+  }
+}

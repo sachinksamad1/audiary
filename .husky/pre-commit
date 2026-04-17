@@ -1,0 +1,11 @@
+echo "\033[34mRunning pre-commit hooks...\033[0m"
+
+# 1. Check for committed secrets and .env files
+./scripts/check-secrets.sh
+
+if [ $? -ne 0 ]; then
+  exit 1
+fi
+
+# 2. Run lint-staged for ESLint and Prettier
+pnpm lint-staged

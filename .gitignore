@@ -4,6 +4,8 @@ logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+pnpm-lock.yaml.*
 lerna-debug.log*
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
@@ -69,40 +71,50 @@ web_modules/
 .env
 .env.*
 !.env.example
+# Docs env files
+./docs/env/*
+!./docs/env/*.md
 
-# parcel-bundler cache (https://parceljs.org/)
-.cache
-.parcel-cache
+# Turbo cache
+.turbo/
 
-# Next.js build output
-.next
-out
+# OS artifacts
+.DS_Store
+Thumbs.db
+desktop.ini
 
-# Nuxt.js build / generate output
-.nuxt
-dist
+# IDEs and editors
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.sublime-project
+*.sublime-workspace
+.project
+.classpath
+.settings/
 
-# Gatsby files
+# Build and Output
+dist/
+build/
+.output/
+.nuxt/
+.nitro/
 .cache/
-# Comment in the public line in if your project uses Gatsby and not Next.js
-# https://nextjs.org/blog/next-9-1#public-directory-support
-# public
-
-# vuepress build output
-.vuepress/dist
-
-# vuepress v2.x temp and cache directory
-.temp
-.cache
+.temp/
+.tmp/
+out/
+.next/
 
 # Sveltekit cache directory
 .svelte-kit/
 
-# vitepress build output
+# vitepress/nuxt/vuepress cache & build outputs
 **/.vitepress/dist
-
-# vitepress cache directory
 **/.vitepress/cache
+.vuepress/dist
 
 # Docusaurus cache and generated files
 .docusaurus
@@ -125,15 +137,13 @@ dist
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
 
-# yarn v3
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/sdks
-!.yarn/versions
+# pnpm specifics
+pnpm-lock.yaml.*
+!pnpm-lock.yaml
 
-# Vite logs files
-vite.config.js.timestamp-*
-vite.config.ts.timestamp-*
+# vfox
+.vfox/
+# .vfox-versions and .tool-versions should probably be tracked, but .vfox is internal
+
+# misc
+/docs/env/
